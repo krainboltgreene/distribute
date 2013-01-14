@@ -13,8 +13,11 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-if options[:version]
-  Release.new(ARGV, options[:version]).distribute!
-else
-  Latest.new(ARGV).distribute!
+case
+  when options[:version]
+    Release.new(ARGV, options[:version]).distribute!
+  when ARGV.any?
+    Latest.new(ARGV).distribute!
+  else
+    "You didn't use this binary right."
 end

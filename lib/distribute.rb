@@ -4,6 +4,8 @@ require_relative "distribute/release"
 require_relative "distribute/version"
 
 class Distribute
+  @@type = nil
+
   attr_accessor :files, :version
 
   def initialize(files, version = nil)
