@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Distribute : A distribution tool for binaries and libraries" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Distribute</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/krainboltgreene/distribute">View on GitHub</a>
+
+          <h1 id="project_title">Distribute</h1>
+          <h2 id="project_tagline">A distribution tool for binaries and libraries</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/krainboltgreene/distribute/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/krainboltgreene/distribute/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>distribute is a gem for creating distributions of your code.
+If you have any statically released binaries or files then this will help you.
+Lots of people used Github Downloads before, but now can't.
+With distribute this is made much easier.</p>
+
+<p>Requires git, at the moment.</p>
+
+<h1>Using Distribute</h1>
+
+<p>Either use in a rake task:</p>
+
+<div class="highlight"><pre><span class="n">files</span> <span class="o">=</span> <span class="o">[</span>
+  <span class="s1">'bin/whatever'</span><span class="p">,</span>
+  <span class="s1">'dist/thing.js'</span><span class="p">,</span>
+  <span class="s1">'dist/thing.min.js'</span>
+<span class="o">]</span>
+
+<span class="n">version</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s2">"VERSION"</span><span class="p">)</span>
+
+<span class="n">desc</span> <span class="s2">"Releasing the new binary"</span>
+<span class="n">task</span> <span class="ss">:release</span> <span class="k">do</span>
+  <span class="no">Release</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">files</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span><span class="o">.</span><span class="n">distribute!</span>
+<span class="k">end</span>
+
+<span class="n">desc</span> <span class="s2">"Releasing the latest binary"</span>
+<span class="n">task</span> <span class="ss">:latest</span> <span class="k">do</span>
+  <span class="no">Latest</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">files</span><span class="p">)</span><span class="o">.</span><span class="n">distribute!</span>
+<span class="k">end</span>
+</pre></div>
+
+<p>Or the binary provided by us:</p>
+
+<div class="highlight"><pre><span class="n">distribute</span> <span class="o">--</span><span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="o">.</span><span class="mi">0</span><span class="o">.</span><span class="mi">0</span> <span class="n">ember</span><span class="o">.</span><span class="n">js</span> <span class="n">ember</span><span class="o">.</span><span class="n">min</span><span class="o">.</span><span class="n">js</span> <span class="o">[</span><span class="n">filename</span><span class="o">.</span><span class="n">.</span><span class="o">.]</span>
+</pre></div>
+
+<p>For more information, check the <a href="/wiki">wiki</a></p>
+
+<h1>Installing Distribute</h1>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem 'distribute'
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install distribute
+</code></pre>
+
+<h1>Contributing</h1>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol><p>A list of past contributors:</p>
+
+<h1>License</h1>
+
+<pre><code>Copyright (c) 2013 Kurtis Rainbolt-Greene
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Distribute maintained by <a href="https://github.com/krainboltgreene">krainboltgreene</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
