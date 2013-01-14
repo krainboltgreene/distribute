@@ -27,4 +27,20 @@ class TestDistribute < MiniTest::Unit::TestCase
     actual = @latest.send :file_extention, 'example1.file'
     assert_equal expected, actual
   end
+
+  def test_files_exist?
+    expected = true
+    actual = @latest.send :files_exist?
+    assert_equal expected, actual
+
+    @latest.files = ["foo", "far", "fong"]
+    expected = false
+    actual = @latest.send :files_exist?
+    assert_equal expected, actual
+
+    @latest.files = @files << "fong"
+    expected = false
+    actual = @latest.send :files_exist?
+    assert_equal expected, actual
+  end
 end

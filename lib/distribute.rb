@@ -58,7 +58,11 @@ class Distribute
   end
 
   def move_files
-    files.each &method(:move_file)
+    files.each &method(:move_file) if files_exist?
+  end
+
+  def files_exist?
+    files.all? { |file| File.exists? file }
   end
 
   def move_file(file)
