@@ -6,7 +6,7 @@ require_relative "distribute/version"
 class Distribute
   @@type = nil
 
-  attr_accessor :files, :version
+  attr_accessor :files, :version, :type
 
   def initialize(files, version = nil)
     @type = @@type
