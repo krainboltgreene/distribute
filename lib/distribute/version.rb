@@ -1,3 +1,3 @@
-module Distribute
-  VERSION = "0.0.1"
+class Distribute
+  VERSION = "1.0.0"
 end
