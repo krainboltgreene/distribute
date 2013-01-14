@@ -33,7 +33,7 @@ class Distribute
   end
 
   def has_unsaved_changes?
-    Command.new("git status --porcelain").send!.empty?
+    !Command.new("git status --porcelain").send!.empty?
   end
 
   def branch_exists?
