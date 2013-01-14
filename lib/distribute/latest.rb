@@ -1,10 +1,8 @@
-class Distribute
-  class Latest < Distribute
-    @@type = "latest"
+class Latest < Distribute
+  @@type = "latest"
 
-    def distribute!
-      setup_branch
-      push
-    end
+  def distribute!
+    setup_branch
+    push
   end
 end

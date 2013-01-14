@@ -1,17 +1,15 @@
-class Distribute
-  class Release < Distribute
-    @@type = "release"
+class Release < Distribute
+  @@type = "release"
 
-    def distribute!
-      setup_branch
-      tag_branch
-      push
-    end
+  def distribute!
+    setup_branch
+    tag_branch
+    push
+  end
 
-    private
+  private
 
-    def tag_branch
-      Command.new("git tag release-v#{version}").send!
-    end
+  def tag_branch
+    Command.new("git tag release-v#{version}").send!
   end
 end
