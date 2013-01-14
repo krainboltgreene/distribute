@@ -50,7 +50,7 @@ class Distribute
   end
 
   def add_files_to_index
-    ready_files.each &method(:add_file_to_index)
+    files.each &method(:add_file_to_index)
   end
 
   def add_file_to_index(file)
