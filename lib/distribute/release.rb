@@ -1,10 +1,12 @@
 class Release < Distribute
-  @@type = "release"
-
   def distribute!
     setup_branch
     tag_branch
     push
+  end
+
+  def type
+    "release"
   end
 
   private
