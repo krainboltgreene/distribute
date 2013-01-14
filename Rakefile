@@ -18,8 +18,8 @@ desc "Run all of the tests"
 Rake::TestTask.new do |config|
   config.libs << 'test'
   config.pattern = 'test/**/*_test*'
-  config.verbose = true
-  config.warning = true
+  # config.verbose = true
+  # config.warning = true
 end
 
 desc "Generate all of the docs"

@@ -74,19 +74,19 @@ class Distribute
   end
 
   def file_name(file)
-    split_name(file).shift
+    split_file_name(file).shift
   end
 
   def file_extention(file)
-    split_name(file).tap(&:shift).join "."
+    split_file_name(file).tap(&:shift).join "."
   end
 
-  def get_file(file)
-    file.split(File::DELIMITER).last
+  def file_from_path(file)
+    file.split(File::SEPARATOR).last
   end
 
-  def split_name(file)
-    file.split "."
+  def split_file_name(file)
+    file_from_path(file).split "."
   end
 
   def commit_index
