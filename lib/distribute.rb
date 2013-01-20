@@ -46,7 +46,7 @@ class Distribute
   end
 
   def clear_working_index
-    Command.new("git rm -rf .").send!
+    Command.new("git rm -r --cache .").send!
   end
 
   def add_files_to_index
